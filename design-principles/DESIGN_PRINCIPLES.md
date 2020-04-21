@@ -35,8 +35,6 @@ function calculateAfterTaxValue(value, countryCode) {
     	let afterTaxValue = 0;
         const tax = getTaxValue(countryCode);
 
-
-
         return afterTaxValue*tax;
 }
 

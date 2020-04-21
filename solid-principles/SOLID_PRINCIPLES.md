@@ -64,4 +64,14 @@ The susbtitution principle is a set of checks that help predict whether a subcla
 
 ## Interface Segregation Principle
 
+_Clients shouldn't be forced to depend on methods they do not use._
+
+Try to make your interfaces narrow enough that client classes don't have to implement behaviours they don't need.
+
+According to interface segregation principle, you should break down "fat" interfaces into more granular and specific ones. Clients should implement only those methods that they really need. Otherwise, a change to a "fat" interface would break even clients that don't use the changed methods.
+
+Class inheritance lets a class have just one superclass, but it doesn't limit the number of interfaces that the class can implement at the same time. Hence, there's no need to cram tons of unrelated methods to a single interface. Break it down into several more refined interfaces - you can implement them all in a single class if needed. However, some classes may be fine with implementing just one of them.
+
+As with the other principles, you can go too far with this one. Don't further divide an interface which is already quite specific. Remember that the more interfaces you create, the more complex your code becomes. Keep the balance.
+
 ## Dependency Inversion Principle

@@ -75,3 +75,20 @@ Class inheritance lets a class have just one superclass, but it doesn't limit th
 As with the other principles, you can go too far with this one. Don't further divide an interface which is already quite specific. Remember that the more interfaces you create, the more complex your code becomes. Keep the balance.
 
 ## Dependency Inversion Principle
+
+_High-level classes shouldn't depend on low-level classes. Both should depend on abstractions. Abstractions shouldn't depend on details. Details should depend on abstractions._
+
+Usually when designing software, you can make a distinction between two levels of classes.
+
+-   **Low-level classes** implement basic operations such as working with a disk, transfering data over a network, connecting to a database, etc.
+-   **High-level classes** contain complex business logic that directs low-level classes to do something.
+
+Sometimes people design low-level classes first and only then start working on high-level ones. This is very common when you start developing a prototype on a new system, and you're not even sure what's possible at the higher level because low-level stuff isn't implemented or clear. With such an approach business logic classes tend to become dependent on primitive low-level classes.
+
+The dependency inversion principle suggests changing the direction of this dependency.
+
+1. For starters, you need to describe interfaces for low-level operations that high-level classes rely on, preferably in business terms. For instance, business logic should call a method `openReport(file)` rather than a series of methods `openFile(x)`, `readFile(x)`, `closeFile(x)`. These interfaces count as high-level ones.
+2. Now you can make high-level classes dependent on those interfaces, instead of on concrete low-level classes. This dependency will be much softer than the original one.
+3. Once low-level classes implement these interfaces, they become dependent on the business logic level, reversing the direction of the original dependency.
+
+The dependency inversion principle often goes along with the _open/closed principle_: you can extend low-level classes to use with different business logic classes without breaking existing classes.

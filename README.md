@@ -8,4 +8,4 @@ In this repo I will upload some examples of design patterns divided in three cat
 -   **Structural patterns** are patterns that explain how to assemble objects and classes into larger structures, while keeping the structures flexible and efficient.
 -   **Behavioural Patterns** are patterns that take care of effective communication and the assignment of responsabilities between objects.
 
-Beside design patterns, this repo will also feature software design principles divided into [Design Principles](design-principles/DESIGN_PRINCIPLES.md) and [SOLID Principles](solid-principles/SOLID_PRINCIPLES.md).
+Beside design patterns, this repo will also feature software design principles divided into [Design Principles](principles/DESIGN_PRINCIPLES.md) and [SOLID Principles](principles/SOLID_PRINCIPLES.md).

@@ -127,15 +127,15 @@ From the example above we can see that there are two "main" classes. _Company_ a
 
 When talking about OOP, Inheritance is probably the most obvious and easy way of reusing code. However, it comes with some caveats that become apparent after a program has a lot of classes and changing something is really hard. For example:
 
--   **A subclass can't reduce the interface of the superclass.** You have to implement all abstract methods of the parent class even if you won't be using them.
+- **A subclass can't reduce the interface of the superclass.** You have to implement all abstract methods of the parent class even if you won't be using them.
 
--   **When overriding methods you need to make sure that the new behaviour is compatible with the base one.** It's important because objects of the subclass may be passed to any code that expects objects of the superclass and you don't want that code to break.
+- **When overriding methods you need to make sure that the new behaviour is compatible with the base one.** It's important because objects of the subclass may be passed to any code that expects objects of the superclass and you don't want that code to break.
 
--   **Inheritance breaks encapsulation of the superclasss.** Because the internal details of the parent class become avialable to the subclass. There might be an opposite situation where a programmer makes a superclass aware of some details of subclass for the sake of making further extension easier.
+- **Inheritance breaks encapsulation of the superclasss.** Because the internal details of the parent class become avialable to the subclass. There might be an opposite situation where a programmer makes a superclass aware of some details of subclass for the sake of making further extension easier.
 
--   **Subclasses are tightly coupled to superclasses.** Any change in a superclass may break the functionality of subclasses.
+- **Subclasses are tightly coupled to superclasses.** Any change in a superclass may break the functionality of subclasses.
 
--   **Trying to reuse code through inheritacne can lead to creating parallel inheritance hierarchies.** Inheritance usually takes place in a single dimension. But whenever there are two or more dimensions, you have to create lots of classs combinations, bloating the class hierarchy to a ridiculous size.
+- **Trying to reuse code through inheritance can lead to creating parallel inheritance hierarchies.** Inheritance usually takes place in a single dimension. But whenever there are two or more dimensions, you have to create lots of classs combinations, bloating the class hierarchy to a ridiculous size.
 
 There is an alternative to inheritance called _Composition_. Whereas inheritance represents the "is a" relationship between classes ( a car _is a_ transport ), composition represents the "has a" relationship ( a car _has an_ engine).
 
@@ -182,9 +182,9 @@ class AutopilotCombustionCar  extends CombustionCar {
 
 ```
 
-And then have to repeat the same struture for the Truck. Each additional parameter results in multiplying the number of subclasses. And we end up with a lot of duplicate between subclasses, as a subclass can't extend two classes at the same time.
+And then have to repeat the same struture for the Truck. Each additional parameter results in multiplying the number of subclasses. And we end up with a lot of duplicate code between subclasses, as a subclass can't extend two classes at the same time.
 
-If we take a composition approach. Instead of car objects implementing a behaviour on ther own, they can delefate it to other objects. So we can end up with:
+If we take a composition approach. Instead of car objects implementing a behaviour on ther own, they can delegate it to other objects. So we can end up with:
 
 ```
 
